@@ -11,8 +11,16 @@ var command = process.argv[2];
 console.log('Command: ',command);
 console.log('Yargs : ',yargs.argv);
 if(command == 'add'){
-  notes.addNote(argv.title,argv.body);
   //node app.js add --title=Secret --body="This is my secret"
+  var note = notes.addNote(argv.title,argv.body);
+  if(note) {
+    console.log('Note created');
+    console.log('__');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
+  }else {
+    console.log('Note Already stored');
+  }
 } else if(command == 'list'){
   notes.getAll();
 } else if (command == 'read') {
