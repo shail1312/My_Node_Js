@@ -37,7 +37,14 @@ var getNote = (title) => {
 }
 
 var removeNote = (title) => {
-  console.log('Removing note',title);
+  //fatch notes
+  var notes = fetchNotes();
+  //filter notes, romeving the one with title of arguemrnt
+  var filterNotes = notes.filter((note) => note.title !== title);
+  //save new notes array
+  saveNotes(filterNotes);
+
+  return notes.length !== filterNotes.length;
 }
 
 module.exports = {
