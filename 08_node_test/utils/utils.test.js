@@ -1,6 +1,8 @@
 const expect = require('expect');
 const utils = require('./utils');
 
+describe('Utils', () => {
+
 it('should add two numbers', () => {
   var res = utils.add(11, 22);
 
@@ -30,6 +32,8 @@ it('should square number', () => {
 
 //should verify first and lastName and set
 // assert it include firstName and lastName with proper values
+
+});
 
 it('should set firstName and lastName', () => {
   var user = {location: 'India', age: 23};
